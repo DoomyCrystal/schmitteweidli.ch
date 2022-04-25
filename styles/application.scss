@@ -1,0 +1,15 @@
+@tailwind base;
+
+@import 'base/base.scss';
+@import 'base/typography.scss';
+
+@import 'remixicon/fonts/remixicon.css';
+
+@tailwind components;
+
+@import 'components/buttons.scss';
+@import 'components/containers.scss';
+
+@tailwind utilities;
+
+@import 'utilities.scss';
