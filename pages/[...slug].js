@@ -14,8 +14,8 @@ export default function Page({story, links, preview}) {
         <>
             <SeoMetaTags story={story} />
 
-            <header className="container w-full mx-auto py-4 px-4">
-                <div className="flex justify-center">
+            <header>
+                <div className="flex">
                     <Logo/>
                 </div>
                 <Navigation links={links} currentStory={story}/>
