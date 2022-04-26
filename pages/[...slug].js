@@ -1,10 +1,11 @@
 import Head from 'next/head'
-
+import Link from 'next/link'
 import Storyblok, {useStoryblok} from '../lib/storyblok'
 import DynamicComponent from '../components/dynamic-component'
 import Logo from '../components/layout/logo'
 import Navigation from "../components/layout/navigation"
 import SeoMetaTags from "../components/layout/seo-meta-tags.js"
+import NavLinks from '../components/nav_links.js'
 
 export default function Page({story, links, preview}) {
     //const enableBridge = true // load the storyblok bridge everywhere
@@ -13,13 +14,14 @@ export default function Page({story, links, preview}) {
     return (
         <>
             <SeoMetaTags story={story} />
-
-            <header>
-                <div className="flex">
-                    <Logo/>
-                </div>
-                <Navigation links={links} currentStory={story}/>
-            </header>
+            <div className="navbar container">
+              <div className="col-span-full flex items-end">
+                  <Link href="/">
+                      <a><Logo/></a>
+                  </Link>
+                  <NavLinks blok={links.content} currentStory={story} />
+              </div>
+            </div>
             <DynamicComponent blok={story?.content}/>
 
             <footer>
@@ -44,26 +46,13 @@ export async function getStaticProps({query, params, preview = false}) {
         sbParams.cv = Date.now()
     }
     let storyQuery = Storyblok.get(`cdn/stories/${slug}`, sbParams)
-    let linksQuery = Storyblok.get("cdn/links/")
+    let linksQuery = Storyblok.get(`cdn/stories/layout/navigation`, sbParams)
 
     const responses = await Promise.all([storyQuery, linksQuery])
-    let links = []
-
-    Object.keys(responses[1].data.links).forEach((linkKey) => {
-        // do not create a route for folders and home
-        if (responses[1].data.links[linkKey].is_folder || responses[1].data.links[linkKey].slug === "home") {
-            return;
-        }
-
-        links.push(responses[1].data.links[linkKey])
-    })
-
-    links.sort((a, b) => a.position - b.position)
-
     return {
         props: {
             story: responses[0].data ? responses[0].data.story : null,
-            links,
+            links: responses[1].data ? responses[1].data.story : null,
             key: slug,
             preview,
         },
