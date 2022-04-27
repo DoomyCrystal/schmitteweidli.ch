@@ -11,6 +11,8 @@ import Event from './event'
 import Animals from './animals'
 import Animal from './animal'
 import ProductLink from './product_link'
+import ContactInfo from './contact_info'
+import ContactItem from './contact_item'
 
 // resolve Storyblok components to Next.js components
 const Components = {
@@ -26,6 +28,8 @@ const Components = {
   animals: Animals,
   animal: Animal,
   product_link: ProductLink,
+  contact_info: ContactInfo,
+  contact_item: ContactItem,
 }
 
 const DynamicComponent = ({blok}) => {

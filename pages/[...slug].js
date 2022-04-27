@@ -6,6 +6,7 @@ import Logo from '../components/layout/logo'
 import Navigation from "../components/layout/navigation"
 import SeoMetaTags from "../components/layout/seo-meta-tags.js"
 import NavLinks from '../components/nav_links.js'
+import ContactInfo from '../components/contact_info'
 
 export default function Page({story, links, preview}) {
     //const enableBridge = true // load the storyblok bridge everywhere
@@ -25,7 +26,7 @@ export default function Page({story, links, preview}) {
             <DynamicComponent blok={story?.content}/>
 
             <footer>
-                Your Footer
+              <ContactInfo blok={links.content}/>
             </footer>
         </>
     )
