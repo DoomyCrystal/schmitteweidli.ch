@@ -1,6 +1,11 @@
 import React from 'react'
+
+// content types
 import Page from './page'
 import PageAnimals from './page_animals'
+import PageProducts from './page_products'
+
+// normal components
 import NavLinks from './nav_links'
 import NavLink from './nav_link'
 import Intro from './intro'
@@ -11,6 +16,9 @@ import Event from './event'
 import Animals from './animals'
 import Animal from './animal'
 import ProductLink from './product_link'
+import ProductTeaser from './product_teaser'
+import Category from './category'
+import Product from './product'
 import ContactInfo from './contact_info'
 import ContactItem from './contact_item'
 
@@ -18,6 +26,7 @@ import ContactItem from './contact_item'
 const Components = {
   page: Page,
   page_animals: PageAnimals,
+  page_products: PageProducts,
   nav_links: NavLinks,
   nav_link: NavLink,
   header: Header,
@@ -28,6 +37,9 @@ const Components = {
   animals: Animals,
   animal: Animal,
   product_link: ProductLink,
+  product_teaser: ProductTeaser,
+  category: Category,
+  product: Product,
   contact_info: ContactInfo,
   contact_item: ContactItem,
 }

@@ -1,3 +1,5 @@
-.text-shadow-xl {
-  text-shadow: 0 0 100px #000;
+@layer utilities {
+  .text-shadow-xl {
+    text-shadow: 0 0 100px #000;
+  }
 }

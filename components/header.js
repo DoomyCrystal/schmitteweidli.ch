@@ -4,7 +4,7 @@ import Link from 'next/link'
 
 const Header = ({blok}) => {
     return (
-        <div className="header relative h-[28rem] mx-6" {...sbEditable(blok)}>
+        <div className="header relative h-112 mx-6 mb-6" {...sbEditable(blok)}>
           {blok?.picture?.filename && <img className="absolute col-span-full w-full h-full object-cover rounded-lg" src={blok.picture.filename} alt={blok.picture.alt} title={blok.picture.title} width={400} height={265}/>}
           <div className="relative container h-full p-12">
             <div className="col-span-8 flex flex-col justify-end items-start">

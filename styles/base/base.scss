@@ -10,3 +10,11 @@ html {
 .header {
   width: calc(100% - 3rem);
 }
+
+.categories-nav {
+  .nav-item.active {
+    > .nav-link {
+      @apply bg-green-800;
+    }
+  }
+}

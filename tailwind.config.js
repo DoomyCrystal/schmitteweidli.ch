@@ -19,6 +19,9 @@ module.exports = {
           800: '#4D1A1B',
         }
       },
+      spacing: {
+        112: '28rem',
+      },
       minWidth: {
         20: '5rem',
       }
