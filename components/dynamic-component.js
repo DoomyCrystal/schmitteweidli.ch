@@ -20,7 +20,7 @@ import ProductLink from './product_link'
 import ProductTeaser from './product_teaser'
 import Category from './category'
 import Product from './product'
-import Gallery from './gallery'
+import MediaGallery from './media_gallery'
 import GalleryItem from './gallery_item'
 import ContactInfo from './contact_info'
 import ContactItem from './contact_item'
@@ -44,7 +44,7 @@ const Components = {
   product_teaser: ProductTeaser,
   category: Category,
   product: Product,
-  gallery: Gallery,
+  media_gallery: MediaGallery,
   gallery_item: GalleryItem,
   contact_info: ContactInfo,
   contact_item: ContactItem,
