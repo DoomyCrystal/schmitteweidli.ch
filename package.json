@@ -20,6 +20,7 @@
     "react-scrollspy": "^3.4.3",
     "remixicon": "^2.5.0",
     "sass": "^1.50.1",
+    "simple-react-lightbox": "^3.6.9-0",
     "storyblok-js-client": "^4.1.5",
     "storyblok-rich-text-react-renderer": "^2.5.2"
   },

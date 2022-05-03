@@ -7,6 +7,7 @@ import Navigation from "../components/layout/navigation"
 import SeoMetaTags from "../components/layout/seo-meta-tags.js"
 import NavLinks from '../components/nav_links.js'
 import ContactInfo from '../components/contact_info'
+import SimpleReactLightbox from 'simple-react-lightbox'
 
 export default function Page({story, links, preview}) {
     //const enableBridge = true // load the storyblok bridge everywhere
@@ -23,8 +24,9 @@ export default function Page({story, links, preview}) {
                   <NavLinks blok={links.content} currentStory={story} />
               </div>
             </div>
-            <DynamicComponent blok={story?.content}/>
-
+            <SimpleReactLightbox>
+              <DynamicComponent blok={story?.content}/>
+            </SimpleReactLightbox>
             <footer>
               <ContactInfo blok={links.content}/>
             </footer>
