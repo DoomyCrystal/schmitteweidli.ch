@@ -3,6 +3,13 @@ module.exports = {
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}'
   ],
+  safelist: [
+    'pswp__container',
+    'pswp__bg',
+    'pswp__img',
+    'pswp__default-caption',
+    'pswp__button--arrow',
+  ],
   theme: {
     fontFamily: {
       'sans': ['Source Sans Pro', 'system-ui', 'sans-serif'],

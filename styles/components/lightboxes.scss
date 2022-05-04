@@ -1,5 +1,30 @@
 @layer components {
+  .pswp__container {
+    @apply transition-transform duration-500;
+  }
+  .pswp__bg {
+    @apply bg-neutral-800 #{!important};
+  }
+
   .pswp__img, .pswp__img:hover {
-    cursor: default !important;
+    @apply cursor-default;
+  }
+
+  .pswp__button--arrow,
+  .pswp__button--close {
+    @apply flex justify-center items-center m-4 w-10 h-10 rounded bg-neutral-800/90 hover:bg-neutral-600/90 #{!important};
+
+    &.pswp__button--arrow--prev,
+    &.pswp__button--arrow--next {
+      @apply transform -translate-y-1/2;
+    }
+
+    .pswp__icn {
+      @apply left-auto top-auto right-auto mt-0 w-6 h-6 #{!important};
+    }
+  }
+
+  .pswp__default-caption:not(:empty) {
+    @apply left-1/2 right-auto transform -translate-x-1/2 px-2 py-1 rounded text-base bg-neutral-800 #{!important};
   }
 }
