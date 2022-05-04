@@ -4,6 +4,7 @@ import React from 'react'
 import Page from './page'
 import PageAnimals from './page_animals'
 import PageProducts from './page_products'
+import PageGallery from './page_gallery'
 
 // normal components
 import NavLinks from './nav_links'
@@ -19,6 +20,8 @@ import ProductLink from './product_link'
 import ProductTeaser from './product_teaser'
 import Category from './category'
 import Product from './product'
+import MediaGallery from './media_gallery'
+import GalleryItem from './gallery_item'
 import ContactInfo from './contact_info'
 import ContactItem from './contact_item'
 
@@ -27,6 +30,7 @@ const Components = {
   page: Page,
   page_animals: PageAnimals,
   page_products: PageProducts,
+  page_gallery: PageGallery,
   nav_links: NavLinks,
   nav_link: NavLink,
   header: Header,
@@ -40,6 +44,8 @@ const Components = {
   product_teaser: ProductTeaser,
   category: Category,
   product: Product,
+  media_gallery: MediaGallery,
+  gallery_item: GalleryItem,
   contact_info: ContactInfo,
   contact_item: ContactItem,
 }

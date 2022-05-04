@@ -19,7 +19,7 @@ const PageProducts = ({blok}) => {
             <h3 className="h4 px-2">Kategorien</h3>
             <Scrollspy items={blok.body.map(blok => toSlug(blok.headline))} currentClassName="active">
             {blok.body.map(blok => (
-              <li className="nav-item py-1 first:pt-0 last:pb-0 border-b border-neutral-600 last:border-transparent" key={blok._uid}><Link href={`#${toSlug(blok.headline)}`}><a className="nav-link block px-2 py-1 rounded hover:bg-neutral-600">{blok.headline}</a></Link></li>
+              <li className="nav-item py-1 first:pt-0 last:pb-0 border-b border-neutral-600 last:border-transparent" key={blok._uid}><Link href={`#${toSlug(blok.headline)}`}><a className="nav-link block px-2 py-1 rounded hover:bg-neutral-600 transition-colors">{blok.headline}</a></Link></li>
             ))}
             </Scrollspy>
           </div>
