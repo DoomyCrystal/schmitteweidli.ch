@@ -5,6 +5,7 @@ import Page from './page'
 import PageAnimals from './page_animals'
 import PageProducts from './page_products'
 import PageGallery from './page_gallery'
+import PageAboutUs from './page_about_us'
 
 // normal components
 import NavLinks from './nav_links'
@@ -22,6 +23,9 @@ import Category from './category'
 import Product from './product'
 import MediaGallery from './media_gallery'
 import GalleryItem from './gallery_item'
+import TextBlock from './text_block'
+import Milestones from './milestones'
+import MilestoneItem from './milestone_item'
 import ContactInfo from './contact_info'
 import ContactItem from './contact_item'
 
@@ -31,6 +35,7 @@ const Components = {
   page_animals: PageAnimals,
   page_products: PageProducts,
   page_gallery: PageGallery,
+  page_about_us: PageAboutUs,
   nav_links: NavLinks,
   nav_link: NavLink,
   header: Header,
@@ -46,6 +51,9 @@ const Components = {
   product: Product,
   media_gallery: MediaGallery,
   gallery_item: GalleryItem,
+  text_block: TextBlock,
+  milestones: Milestones,
+  milestone_item: MilestoneItem,
   contact_info: ContactInfo,
   contact_item: ContactItem,
 }
