@@ -10,7 +10,7 @@ const Header = ({blok}) => {
             <div className="col-span-8 flex flex-col justify-end items-start">
               <h1 className="mb-0 text-white text-shadow-xl">{blok.title}</h1>
               {blok.link.id && blok.link?.linktype === 'story'
-                ? <Link href={`/${blok.link?.story?.url}`}><a className="btn -large mt-8" target={blok.new_tab ? '_blank' : '_self'} rel={blok.new_tab ? 'noreferrer' : undefined}>Entdecken</a></Link>
+                ? <Link href={`/${blok.link?.story?.url}`}><a className="btn -large -primary mt-8" target={blok.new_tab ? '_blank' : '_self'} rel={blok.new_tab ? 'noreferrer' : undefined}>Entdecken</a></Link>
                 : null
               }
             </div>

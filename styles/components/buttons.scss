@@ -1,7 +1,15 @@
 .btn {
-  @apply inline-flex px-4 py-2 rounded font-semibold text-white bg-green-800 shadow-md;
+  @apply inline-flex px-4 py-2 rounded font-semibold;
 
   &.-large {
     @apply px-6 py-3 text-xl;
+  }
+
+  &.-primary {
+    @apply text-white bg-green-800 shadow-md;
+  }
+
+  &.-secondary {
+    @apply border-2 border-neutral-200;
   }
 }
