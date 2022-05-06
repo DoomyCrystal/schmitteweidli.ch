@@ -12,7 +12,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'sans': ['Source Sans Pro', 'system-ui', 'sans-serif'],
+      'sans': ['Open Sans', 'system-ui', 'sans-serif'],
       'display': ['Caveat Brush'],
     },
     extend: {

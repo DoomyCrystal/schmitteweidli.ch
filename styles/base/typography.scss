@@ -11,17 +11,17 @@
 
   .h3,
   h3 {
-    @apply font-sans text-2xl font-semibold;
+    @apply font-sans text-2xl font-bold;
   }
 
   .h4,
   h4 {
-    @apply mb-2 font-sans text-xl font-semibold;
+    @apply mb-2 font-sans text-xl font-bold;
   }
 
   .h5,
   h5 {
-    @apply font-sans text-base font-semibold;
+    @apply font-sans text-base font-bold;
   }
 
   .lead {
