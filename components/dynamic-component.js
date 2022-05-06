@@ -8,8 +8,7 @@ import PageGallery from './page_gallery'
 import PageAboutUs from './page_about_us'
 
 // normal components
-import NavLinks from './nav_links'
-import NavLink from './nav_link'
+import NavLink from './layout/nav_link'
 import Intro from './intro'
 import Header from './header'
 import OpeningHours from './opening_hours'
@@ -26,8 +25,8 @@ import GalleryItem from './gallery_item'
 import TextBlock from './text_block'
 import Milestones from './milestones'
 import MilestoneItem from './milestone_item'
-import ContactInfo from './contact_info'
-import ContactItem from './contact_item'
+import ContactItem from './layout/contact_item'
+import FooterItem from './layout/footer_item'
 
 // resolve Storyblok components to Next.js components
 const Components = {
@@ -36,7 +35,6 @@ const Components = {
   page_products: PageProducts,
   page_gallery: PageGallery,
   page_about_us: PageAboutUs,
-  nav_links: NavLinks,
   nav_link: NavLink,
   header: Header,
   intro: Intro,
@@ -54,8 +52,8 @@ const Components = {
   text_block: TextBlock,
   milestones: Milestones,
   milestone_item: MilestoneItem,
-  contact_info: ContactInfo,
   contact_item: ContactItem,
+  footer_item: FooterItem,
 }
 
 const DynamicComponent = ({blok}) => {

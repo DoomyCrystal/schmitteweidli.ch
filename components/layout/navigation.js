@@ -1,5 +1,5 @@
 import React from 'react'
-import NavLink from '../nav_link'
+import NavLink from './nav_link'
 import { sbEditable } from '@storyblok/storyblok-editable'
 
 const Navigation = ({ blok, currentStory }) => {

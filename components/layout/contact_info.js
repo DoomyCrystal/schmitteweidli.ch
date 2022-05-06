@@ -1,6 +1,6 @@
 import React from 'react'
 import {sbEditable} from '@storyblok/storyblok-editable'
-import DynamicComponent from './dynamic-component'
+import DynamicComponent from '../dynamic-component'
 
 const ContactInfo = ({blok, currentStory}) => {
     return (

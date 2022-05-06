@@ -1,7 +1,7 @@
 import React from 'react'
 import {sbEditable} from '@storyblok/storyblok-editable'
 import Link from 'next/link'
-import Icon from './layout/icon.js'
+import Icon from './helpers/icon.js'
 
 const ProductLink = ({blok}) => {
     return (

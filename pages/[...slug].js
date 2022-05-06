@@ -5,8 +5,9 @@ import DynamicComponent from '../components/dynamic-component'
 import Logo from '../components/layout/logo'
 import Navigation from "../components/layout/navigation"
 import SeoMetaTags from "../components/layout/seo-meta-tags.js"
-import NavLinks from '../components/nav_links.js'
-import ContactInfo from '../components/contact_info'
+import NavLinks from '../components/layout/nav_links.js'
+import ContactInfo from '../components/layout/contact_info'
+import Footer from '../components/layout/footer'
 
 export default function Page({story, links, preview}) {
     //const enableBridge = true // load the storyblok bridge everywhere
@@ -26,6 +27,7 @@ export default function Page({story, links, preview}) {
               <DynamicComponent blok={story?.content}/>
             <footer>
               <ContactInfo blok={links.content}/>
+              <Footer blok={links.content}/>
             </footer>
         </>
     )

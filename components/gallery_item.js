@@ -1,6 +1,6 @@
 import React from 'react'
 import {sbEditable} from '@storyblok/storyblok-editable'
-import Icon from './layout/icon'
+import Icon from './helpers/icon'
 import {Item} from 'react-photoswipe-gallery'
 
 const GalleryItem = ({blok}) => {
