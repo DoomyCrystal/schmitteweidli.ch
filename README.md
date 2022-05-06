@@ -1,6 +1,6 @@
-# Next.js Storyblok Boilerplate
+# Next.js Storyblok Project
 
-This repository is a Next.js [Storyblok](https://www.storyblok.com) starter template.
+This repository is a Next.js [Storyblok](https://www.storyblok.com) project.
 
 ## Requirements
 

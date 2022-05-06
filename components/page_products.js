@@ -15,11 +15,11 @@ const PageProducts = ({blok}) => {
         null}
       <div id="kategorien" className="container">
         <div className="col-span-3">
-          <div className="categories-nav sticky top-6 p-4 rounded text-white bg-neutral-800">
-            <h3 className="h4 px-2">Kategorien</h3>
+          <div className="categories-nav sticky top-6 p-4 rounded bg-neutral-800">
+            <h3 className="h4 px-2 mb-4 text-white">Kategorien</h3>
             <Scrollspy items={blok.body.map(blok => toSlug(blok.headline))} currentClassName="active">
             {blok.body.map(blok => (
-              <li className="nav-item py-1 first:pt-0 last:pb-0 border-b border-neutral-600 last:border-transparent" key={blok._uid}><Link href={`#${toSlug(blok.headline)}`}><a className="nav-link block px-2 py-1 rounded hover:bg-neutral-600 transition-colors">{blok.headline}</a></Link></li>
+              <li className="nav-item py-1 first:pt-0 last:pb-0 border-b border-neutral-600 last:border-transparent text-white" key={blok._uid}><Link href={`#${toSlug(blok.headline)}`}><a className="nav-link block px-2 py-1 rounded hover:bg-neutral-600 transition-colors">{blok.headline}</a></Link></li>
             ))}
             </Scrollspy>
           </div>

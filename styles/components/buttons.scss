@@ -6,10 +6,26 @@
   }
 
   &.-primary {
-    @apply text-white bg-green-800 shadow-md;
+    @apply text-white bg-green-800 shadow-md hover:bg-green-700 hover:shadow-lg;
   }
 
   &.-secondary {
-    @apply border-2 border-neutral-200;
+    @apply border-2 border-neutral-200 hover:text-green-800 hover:bg-neutral-100;
+  }
+
+  &.-link.-icon {
+    @apply items-center gap-2 p-0;
+
+    > i {
+      @apply px-3 py-2 rounded text-white bg-green-800 shadow-md;
+    }
+
+    &:hover > i {
+      @apply bg-green-700 shadow-lg
+    }
+
+    > span {
+      @apply text-green-800;
+    }
   }
 }

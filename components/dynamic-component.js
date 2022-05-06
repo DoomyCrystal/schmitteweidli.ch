@@ -13,7 +13,8 @@ import Intro from './intro'
 import Header from './header'
 import OpeningHours from './opening_hours'
 import Events from './events'
-import Event from './event'
+import EventItem from './event_item'
+import Button from './button'
 import Animals from './animals'
 import Animal from './animal'
 import ProductLink from './product_link'
@@ -25,6 +26,8 @@ import GalleryItem from './gallery_item'
 import TextBlock from './text_block'
 import Milestones from './milestones'
 import MilestoneItem from './milestone_item'
+import Cards from './cards'
+import CardItem from './card_item'
 import ContactItem from './layout/contact_item'
 import FooterItem from './layout/footer_item'
 
@@ -40,7 +43,8 @@ const Components = {
   intro: Intro,
   opening_hours: OpeningHours,
   events: Events,
-  event: Event,
+  event_item: EventItem,
+  button: Button,
   animals: Animals,
   animal: Animal,
   product_link: ProductLink,
@@ -52,6 +56,8 @@ const Components = {
   text_block: TextBlock,
   milestones: Milestones,
   milestone_item: MilestoneItem,
+  cards: Cards,
+  card_item: CardItem,
   contact_item: ContactItem,
   footer_item: FooterItem,
 }
