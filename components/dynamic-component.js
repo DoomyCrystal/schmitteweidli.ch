@@ -1,11 +1,13 @@
 import React from 'react'
 
 // content types
-import Page from './page'
+import PageHome from './page_home'
 import PageAnimals from './page_animals'
 import PageProducts from './page_products'
 import PageGallery from './page_gallery'
 import PageAboutUs from './page_about_us'
+import PageArticle from './page_article'
+import PageSimple from './page_simple'
 
 // normal components
 import NavLink from './layout/nav_link'
@@ -26,6 +28,7 @@ import GalleryItem from './gallery_item'
 import TextBlock from './text_block'
 import Milestones from './milestones'
 import MilestoneItem from './milestone_item'
+import PictureLarge from './picture_large'
 import Cards from './cards'
 import CardItem from './card_item'
 import ContactItem from './layout/contact_item'
@@ -33,11 +36,13 @@ import FooterItem from './layout/footer_item'
 
 // resolve Storyblok components to Next.js components
 const Components = {
-  page: Page,
+  page_home: PageHome,
   page_animals: PageAnimals,
   page_products: PageProducts,
   page_gallery: PageGallery,
   page_about_us: PageAboutUs,
+  page_article: PageArticle,
+  page_simple: PageSimple,
   nav_link: NavLink,
   header: Header,
   intro: Intro,
@@ -56,17 +61,18 @@ const Components = {
   text_block: TextBlock,
   milestones: Milestones,
   milestone_item: MilestoneItem,
+  picture_large: PictureLarge,
   cards: Cards,
   card_item: CardItem,
   contact_item: ContactItem,
   footer_item: FooterItem,
 }
 
-const DynamicComponent = ({blok}) => {
+const DynamicComponent = ({blok, story}) => {
   // check if component is defined above
   if (typeof Components[blok?.component] !== 'undefined') {
     const Component = Components[blok?.component]
-    return <Component blok={blok} key={blok?._uid} />
+    return <Component blok={blok} key={blok?._uid} story={story}/>
   }
 
   // fallback if the component doesn't exist

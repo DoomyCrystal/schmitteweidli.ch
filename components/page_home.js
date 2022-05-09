@@ -2,7 +2,7 @@ import React from 'react'
 import DynamicComponent from './dynamic-component'
 import {sbEditable} from '@storyblok/storyblok-editable'
 
-const Page = ({blok}) => (
+const PageHome = ({blok}) => (
   <main {...sbEditable(blok)}>
     {blok.header ?
       blok.header.map(blok => (
@@ -17,4 +17,4 @@ const Page = ({blok}) => (
   </main>
 )
 
-export default Page
+export default PageHome

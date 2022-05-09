@@ -24,7 +24,7 @@ export default function Page({story, links, preview}) {
                   <NavLinks blok={links.content} currentStory={story} />
               </div>
             </div>
-              <DynamicComponent blok={story?.content}/>
+              <DynamicComponent blok={story?.content} story={story}/>
             <footer>
               <ContactInfo blok={links.content}/>
               <Footer blok={links.content}/>
