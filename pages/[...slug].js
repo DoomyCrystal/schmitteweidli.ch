@@ -1,29 +1,45 @@
+import { useState } from 'react'
+import { useMediaQuery } from 'usehooks-ts'
 import Head from 'next/head'
 import Link from 'next/link'
 import Storyblok, {useStoryblok} from '../lib/storyblok'
-import DynamicComponent from '../components/dynamic-component'
-import Logo from '../components/layout/logo'
-import Navigation from "../components/layout/navigation"
 import SeoMetaTags from "../components/layout/seo-meta-tags.js"
+import Logo from '../components/layout/logo'
+import Icon from '../components/helpers/icon'
 import NavLinks from '../components/layout/nav_links.js'
+import DynamicComponent from '../components/dynamic-component'
 import ContactInfo from '../components/layout/contact_info'
 import Footer from '../components/layout/footer'
+import React from 'react'
 
 export default function Page({story, links, preview}) {
     //const enableBridge = true // load the storyblok bridge everywhere
     story = useStoryblok(story, preview)
 
+    const [isOpen, setOpen] = useState(false)
+    const isDesktop = useMediaQuery('(min-width: 768px)')
+
+    function toggleMenu() {
+      setOpen(!isOpen)
+    }
     return (
         <>
             <SeoMetaTags story={story} />
-            <div className="navbar container">
-              <div className="col-span-full flex items-end">
-                  <Link href="/">
-                      <a><Logo/></a>
-                  </Link>
-                  <NavLinks blok={links.content} currentStory={story} />
+            <div className={`navbar container absolute md:relative m-2 md:m-0 rounded-lg bg-white overflow-hidden z-10${isOpen ? ' shadow-lg' : ''}`}>
+              <div className="col-span-full block md:flex md:items-end">
+                <div className="flex justify-between">
+                    <Link href="/">
+                        <a><Logo/></a>
+                    </Link>
+                    <button className="btn -icon -link md:hidden" type="button" onClick={toggleMenu}>
+                      <span>Menü</span>
+                      <Icon name={isOpen ? 'close-line' : 'menu-line'}/>
+                    </button>
+                  </div>
+                  {(isOpen || isDesktop) && <NavLinks blok={links.content} currentStory={story} isOpen={isOpen} />}
               </div>
             </div>
+              {!story.content.header && <div className="h-24 md:hidden"/>}
               <DynamicComponent blok={story?.content} story={story}/>
             <footer>
               <ContactInfo blok={links.content}/>

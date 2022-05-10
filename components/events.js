@@ -14,7 +14,7 @@ const Events = ({ blok }) => {
     <div className="events container" {...sbEditable(blok)}>
       <div className="col-span-full">
         {blok.headline && <h2 className="text-center">{blok.headline}</h2>}
-        <ul className="grid grid-cols-12 gap-6" {...sbEditable(blok)}>
+        <ul className="grid grid-cols-12 gap-5 md:gap-6" {...sbEditable(blok)}>
           {currentEvents.slice(0, numberOfItems).map(blok => (
             <DynamicComponent blok={blok} key={blok._uid} />
           ))}

@@ -32,6 +32,15 @@ module.exports = {
       },
       minWidth: {
         20: '5rem',
+      },
+      keyframes: {
+        grow: {
+          '0%': {'max-height': 0},
+          '100%': {'max-height': '400px'}
+        }
+      },
+      animation: {
+        grow: 'grow 1s ease forwards'
       }
     },
   },

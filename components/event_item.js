@@ -27,7 +27,7 @@ const EventItem = ({ blok }) => {
               {blok.date_end && <span> – {dayjs(blok.date_end).format('H.mm')} Uhr</span>}</div>
           </div>}
         {blok.location &&
-          <div className={`flex gap-2 mt-1${blok.button?.length && ' mb-4'}`}>
+          <div className={`flex gap-2 mt-1${blok.button?.length ? ' mb-4' : ''}`}>
             <Icon name="map-pin-fill" className="text-red-600" />
             <div>{blok.location}</div>
           </div>}

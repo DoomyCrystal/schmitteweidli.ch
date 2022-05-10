@@ -23,7 +23,8 @@
     "remixicon": "^2.5.0",
     "sass": "^1.50.1",
     "storyblok-js-client": "^4.1.5",
-    "storyblok-rich-text-react-renderer": "^2.5.2"
+    "storyblok-rich-text-react-renderer": "^2.5.2",
+    "usehooks-ts": "^2.5.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",

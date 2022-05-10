@@ -7,8 +7,15 @@ html {
   }
 }
 
+.navbar {
+  width: calc(100% - 1rem) !important;
+  @apply md:w-full;
+}
+
 .header {
-  width: calc(100% - 3rem);
+  @screen md {
+    width: calc(100% - 3rem);
+  }
 }
 
 .categories-nav {
