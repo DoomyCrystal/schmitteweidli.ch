@@ -1,6 +1,6 @@
 @layer components {
   .pswp__container {
-    @apply transition-transform duration-500;
+    @apply md:transition-transform md:duration-500;
   }
   .pswp__bg {
     @apply bg-neutral-800 #{!important};
