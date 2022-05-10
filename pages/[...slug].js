@@ -36,14 +36,14 @@ export default function Page({story, links, preview}) {
                       <Icon name={isOpen ? 'close-line' : 'menu-line'}/>
                     </button>
                   </div>
-                  {(isOpen || isDesktop) && <NavLinks blok={links.content} currentStory={story} isOpen={isOpen} />}
+                  {(isOpen || isDesktop) && <NavLinks blok={links?.content} currentStory={story} isOpen={isOpen} />}
               </div>
             </div>
-              {!story.content.header && <div className="h-24 md:hidden"/>}
+              {!story?.content.header && <div className="h-24 md:hidden"/>}
               <DynamicComponent blok={story?.content} story={story}/>
             <footer>
-              <ContactInfo blok={links.content}/>
-              <Footer blok={links.content}/>
+              <ContactInfo blok={links?.content}/>
+              <Footer blok={links?.content}/>
             </footer>
         </>
     )
