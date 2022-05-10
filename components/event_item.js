@@ -1,6 +1,7 @@
 import React from 'react'
 import { sbEditable } from '@storyblok/storyblok-editable'
 import DynamicComponent from './dynamic-component.js'
+import Image from 'next/image'
 import Icon from './helpers/icon.js'
 import dayjs from 'dayjs'
 import 'dayjs/locale/de'
@@ -14,9 +15,10 @@ const EventItem = ({ blok }) => {
           <span className="block text-4xl">{dayjs(blok.date_start).format('D.')}</span>
           <span>{dayjs(blok.date_start).locale('de-ch').format('MMM')}</span>
         </div>
-        {blok ?.picture ?.filename && <div className="col-span-3">
-          <img src={blok.picture.filename} alt={blok.picture.alt} title={blok.picture.title} className="w-full h-full object-cover rounded" width={400} height={265} />
-        </div>}
+        {blok.picture.filename &&
+          <div className="w-full aspect-w-2 aspect-h-1">
+            <Image src={blok.picture.filename} alt={blok.picture.alt} layout="fill" objectFit="cover" className="rounded"/>
+          </div>}
       </div>
       <div>
         {blok.headline && <h4>{blok.headline}</h4>}

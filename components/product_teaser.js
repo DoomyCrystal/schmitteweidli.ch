@@ -1,6 +1,7 @@
 import React from 'react'
 import {sbEditable} from '@storyblok/storyblok-editable'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const ProductTeaser = ({blok, index}) => {
   const isFirst = index == 0
@@ -8,7 +9,7 @@ const ProductTeaser = ({blok, index}) => {
     return (
       <Link href={`#${blok.link.anchor}`}>
         <a className={`product-teaser relative flex items-end${isFirst ? ' col-span-6 row-span-2 -mx-6 md:mx-0 h-112 md:h-auto' : ' col-span-3'}`} {...sbEditable(blok)}>
-          {blok.picture && <img className={`absolute w-full h-full object-cover${isFirst ? ' md:rounded-lg' : ' rounded-lg'}`} src={blok.picture.filename} alt={blok.picture.alt} title={blok.picture.title}/>}
+          {blok.picture && <Image src={blok.picture.filename} alt={blok.picture.alt} title={blok.picture.title} layout="fill" objectFit="cover" className={isFirst ? ' md:rounded-lg' : ' rounded-lg'}/>}
           {blok.headline && <h2 className="relative m-6 text-white text-shadow-xl">{blok.headline}</h2>}
         </a>
       </Link>
