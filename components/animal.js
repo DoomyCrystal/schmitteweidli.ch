@@ -7,9 +7,19 @@ import RichTextRenderer from "./helpers/rich-text-renderer";
 const Animal = ({ blok }) => {
   return (
     <li className="animal col-span-full lg:col-span-6 flex flex-col p-6 rounded-lg bg-neutral-100" {...sbEditable(blok)}>
-      {blok.picture?.filename && <div className="aspect-w-3 aspect-h-2 mb-6">
-        <Image src={blok.picture.filename} alt={blok.picture.alt} title={blok.picture.title} layout="fill" objectFit="cover" className="rounded" />
-      </div>}
+      {blok.picture?.filename && (
+        <div className="aspect-w-3 aspect-h-2 mb-6">
+          <Image
+            src={blok.picture.filename}
+            alt={blok.picture.alt}
+            layout="fill"
+            objectFit="cover"
+            placeholder="blur"
+            blurDataURL={blok.picture.filename + '/m/50x0'}
+            className="rounded bg-neutral-200"
+          />
+        </div>
+      )}
       {blok.headline && <h2>{blok.headline}</h2>}
       {blok.text && <div className="richtext mb-8">
         <RichTextRenderer text={blok.text} />

@@ -1,12 +1,23 @@
 import React from 'react'
 import { sbEditable } from '@storyblok/storyblok-editable'
+import Image from 'next/image'
 
 const PictureLarge = ({ blok }) => {
   return (
     <div className="picture-large container" {...sbEditable}>
-        <figure className="col-start-3 col-span-8">
+        <figure className="col-span-full md:col-start-3 md:col-span-8">
           <div className="aspect-w-2 aspect-h-1">
-            {blok.picture && <img src={blok.picture.filename} alt={blok.picture.alt} className="w-full h-full rounded-lg object-cover"/>}
+          {blok.picture.filename && (
+            <Image
+              src={blok.picture.filename}
+              alt={blok.picture.alt}
+              layout="fill"
+              objectFit="cover"
+              placeholder="blur"
+              blurDataURL={blok.picture.filename + '/m/50x0'}
+              className="rounded-lg bg-neutral-100"
+            />
+          )}
           </div>
           {blok.picture.alt && <figcaption className="mt-2 italic text-sm">{blok.picture.alt}</figcaption>}
         </figure>

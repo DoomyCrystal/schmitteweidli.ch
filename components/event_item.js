@@ -17,7 +17,15 @@ const EventItem = ({ blok }) => {
         </div>
         {blok.picture.filename &&
           <div className="w-full aspect-w-2 aspect-h-1">
-            <Image src={blok.picture.filename} alt={blok.picture.alt} layout="fill" objectFit="cover" className="rounded"/>
+            <Image
+              src={blok.picture.filename}
+              alt={blok.picture.alt}
+              layout="fill"
+              objectFit="cover"
+              placeholder="blur"
+              blurDataURL={blok.picture.filename + '/m/50x0'}
+              className="rounded bg-neutral-200"
+            />
           </div>}
       </div>
       <div>
