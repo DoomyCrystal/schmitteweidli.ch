@@ -1,7 +1,6 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useMediaQuery } from 'usehooks-ts'
-import { useStoryblokApi, StoryblokComponent } from '@storyblok/react'
+import { getStoryblokApi, StoryblokComponent } from '@storyblok/react'
 import Link from 'next/link'
 import SeoMetaTags from "../components/layout/seo-meta-tags"
 import Logo from '../components/layout/logo'
@@ -11,15 +10,15 @@ import ContactInfo from '../components/layout/contact_info'
 import Footer from '../components/layout/footer'
 
 export default function Page({story, links}) {
-    if (!story?.content) {
-        return <div>Lade...</div>;
-    }
-
     const [isOpen, setOpen] = useState(false)
     const isDesktop = useMediaQuery('(min-width: 768px)')
 
     function toggleMenu() {
       setOpen(!isOpen)
+    }
+
+    if (!story?.content) {
+        return <div>Lade...</div>;
     }
     return (
         <>
@@ -49,7 +48,7 @@ export default function Page({story, links}) {
 }
 
 export async function getStaticProps({query, params, preview = false}) {
-    const storyblokApi = useStoryblokApi()
+    const storyblokApi = getStoryblokApi()
     // home is the default slug for the homepage in Storyblok
     let slug = params?.slug ? params.slug.join("/") : "home";
     // load the published content outside of the preview mode
@@ -79,7 +78,7 @@ export async function getStaticProps({query, params, preview = false}) {
 }
 
 export async function getStaticPaths() {
-    const storyblokApi = useStoryblokApi()
+    const storyblokApi = getStoryblokApi()
     // get all links from Storyblok
     let { data } = await storyblokApi.get("cdn/links/");
 

@@ -13,7 +13,7 @@ const Header = ({ blok }) => {
   }
   return (
     <div className="header relative h-112 md:mx-6 mb-6" {...storyblokEditable(blok)}>
-      {responsivePicture && (
+      {responsivePicture.filename && (
         <Image
           src={responsivePicture.filename}
           alt={responsivePicture.alt}
