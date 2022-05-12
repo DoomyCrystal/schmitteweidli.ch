@@ -1,6 +1,5 @@
 import React from 'react'
-import { sbEditable } from '@storyblok/storyblok-editable'
-import DynamicComponent from './dynamic-component'
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react'
 import { useState } from 'react'
 
 const Events = ({ blok }) => {
@@ -11,12 +10,12 @@ const Events = ({ blok }) => {
   const currentEvents = blok.events.filter(blok => dateToday <= new Date(blok.date_end))
 
   return (
-    <div className="events container" {...sbEditable(blok)}>
+    <div className="events container" {...storyblokEditable(blok)}>
       <div className="col-span-full">
         {blok.headline && <h2 className="text-center">{blok.headline}</h2>}
-        <ul className="grid grid-cols-12 gap-5 md:gap-6" {...sbEditable(blok)}>
+        <ul className="grid grid-cols-12 gap-5 md:gap-6">
           {currentEvents.slice(0, numberOfItems).map(blok => (
-            <DynamicComponent blok={blok} key={blok._uid} />
+            <StoryblokComponent blok={blok} key={blok._uid} />
           ))}
         </ul>
       </div>

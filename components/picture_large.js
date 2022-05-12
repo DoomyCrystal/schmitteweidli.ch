@@ -1,10 +1,10 @@
 import React from 'react'
-import { sbEditable } from '@storyblok/storyblok-editable'
+import { storyblokEditable } from '@storyblok/react'
 import Image from 'next/image'
 
 const PictureLarge = ({ blok }) => {
   return (
-    <div className="picture-large container" {...sbEditable}>
+    <div className="picture-large container" {...storyblokEditable(blok)}>
         <figure className="col-span-full md:col-start-3 md:col-span-8">
           <div className="aspect-w-2 aspect-h-1">
           {blok.picture.filename && (

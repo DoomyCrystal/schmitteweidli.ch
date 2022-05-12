@@ -1,12 +1,11 @@
 import React from 'react'
-import {sbEditable} from '@storyblok/storyblok-editable'
-import DynamicComponent from '../dynamic-component'
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react'
 
 const ContactInfo = ({blok, currentStory}) => {
     return (
-        <ul className="container" {...sbEditable(blok)}>
+        <ul className="container" {...storyblokEditable(blok)}>
           {blok?.contact_info.map(blok => (
-            <DynamicComponent blok={blok} key={blok._uid} />
+            <StoryblokComponent blok={blok} key={blok._uid} />
           ))}
         </ul>
     )

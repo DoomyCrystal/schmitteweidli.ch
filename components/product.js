@@ -1,10 +1,10 @@
 import React from 'react'
-import { sbEditable } from '@storyblok/storyblok-editable'
+import { storyblokEditable } from '@storyblok/react'
 import Image from 'next/image'
 
 const Product = ({ blok }) => {
   return (
-    <li className="product col-span-4 md:col-span-3" {...sbEditable(blok)}>
+    <li className="product col-span-4 md:col-span-3" {...storyblokEditable(blok)}>
       {blok.picture && (
         <div className="aspect-w-1 aspect-h-1 mb-4">
           <Image

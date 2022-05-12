@@ -1,13 +1,12 @@
 import React from 'react'
-import { sbEditable } from '@storyblok/storyblok-editable'
-import DynamicComponent from './dynamic-component.js'
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react'
 
 const Cards = ({ blok }) => {
   return (
-    <div className="container" {...sbEditable(blok)}>
+    <div className="container" {...storyblokEditable(blok)}>
       <div className="col-span-full md:col-start-3 md:col-span-8 grid grid-cols-8 gap-5 md:gap-6">
         {blok.cards.map(blok => (
-          <DynamicComponent blok={blok} key={blok._uid}/>
+          <StoryblokComponent blok={blok} key={blok._uid}/>
         ))}
       </div>
     </div>

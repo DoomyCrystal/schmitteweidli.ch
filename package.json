@@ -10,7 +10,7 @@
     "create-component": "node ./generators/copy.js"
   },
   "dependencies": {
-    "@storyblok/storyblok-editable": "^1.0.0",
+    "@storyblok/react": "^1.0.5",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "axios": "^0.21.1",
     "dayjs": "^1.11.1",

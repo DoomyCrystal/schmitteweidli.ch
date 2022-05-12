@@ -1,5 +1,5 @@
 import React from "react";
-import { sbEditable } from "@storyblok/storyblok-editable";
+import { storyblokEditable } from '@storyblok/react'
 import Image from "next/image";
 import Link from "next/link";
 import { useMediaQuery } from 'usehooks-ts'
@@ -12,8 +12,8 @@ const Header = ({ blok }) => {
     responsivePicture = isDesktop ? blok.picture : blok.picture_mobile
   }
   return (
-    <div className="header relative h-112 md:mx-6 mb-6" {...sbEditable(blok)}>
-      {responsivePicture && (
+    <div className="header relative h-112 md:mx-6 mb-6" {...storyblokEditable(blok)}>
+      {responsivePicture.filename && (
         <Image
           src={responsivePicture.filename}
           alt={responsivePicture.alt}
