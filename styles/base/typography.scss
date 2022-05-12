@@ -25,10 +25,14 @@
   }
 
   .lead {
-    @apply text-xl md:text-2xl;
+    @apply text-xl;
   }
 
   .richtext {
+    p:not(:last-of-type) {
+      @apply mb-2;
+    }
+
     a {
       @apply underline text-green-800;
     }

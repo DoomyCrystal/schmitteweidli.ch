@@ -13,7 +13,7 @@ const MainMenu = ({ blok, currentStory }) => {
     setOpen(!isOpen)
   }
   return (
-    <nav className={`navbar container absolute md:relative m-2 md:m-0 rounded-lg bg-white overflow-hidden z-10${isOpen ? ' shadow-lg' : ''}`}>
+    <nav className={`navbar container absolute md:relative m-2 md:m-auto rounded-lg bg-white overflow-hidden z-10${isOpen ? ' shadow-lg' : ''}`}>
       <div className="col-span-full block md:flex md:items-end">
         <div className="flex justify-between">
             <Link href="/">

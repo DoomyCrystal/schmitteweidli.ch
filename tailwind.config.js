@@ -34,6 +34,9 @@ module.exports = {
       minWidth: {
         20: '5rem',
       },
+      fontSize: {
+        '6xl': '4rem',
+      },
       keyframes: {
         grow: {
           '0%': {'max-height': 0},
