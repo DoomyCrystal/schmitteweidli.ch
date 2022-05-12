@@ -2,6 +2,7 @@ import '../styles/application.scss'
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 
 // content types
+import Global from '../components/layout/global'
 import PageHome from '../components/page_home'
 import PageAnimals from '../components/page_animals'
 import PageProducts from '../components/page_products'
@@ -40,6 +41,7 @@ storyblokInit({
   // bridge: true,
   use: [apiPlugin],
   components: {
+    global: Global,
     page_home: PageHome,
     page_animals: PageAnimals,
     page_products: PageProducts,

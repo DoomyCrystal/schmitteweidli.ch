@@ -9,7 +9,7 @@ html {
 
 .navbar {
   width: calc(100% - 1rem) !important;
-  @apply md:w-full;
+  @apply md:w-full #{!important};
 }
 
 .header {

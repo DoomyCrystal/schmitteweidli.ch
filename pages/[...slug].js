@@ -1,47 +1,25 @@
-import React, { useState } from 'react'
-import { useMediaQuery } from 'usehooks-ts'
-import { getStoryblokApi, StoryblokComponent } from '@storyblok/react'
-import Link from 'next/link'
+import React from 'react'
+import { getStoryblokApi, StoryblokComponent, useStoryblokState } from '@storyblok/react'
 import SeoMetaTags from "../components/layout/seo-meta-tags"
-import Logo from '../components/layout/logo'
-import Icon from '../components/helpers/icon'
-import NavLinks from '../components/layout/nav_links.js'
+import MainMenu from '../components/layout/main_menu.js'
 import ContactInfo from '../components/layout/contact_info'
 import Footer from '../components/layout/footer'
 
-export default function Page({story, links}) {
-    const [isOpen, setOpen] = useState(false)
-    const isDesktop = useMediaQuery('(min-width: 768px)')
-
-    function toggleMenu() {
-      setOpen(!isOpen)
-    }
+export default function Page({story, global_story}) {
+    story = useStoryblokState(story)
 
     if (!story?.content) {
-        return <div>Lade...</div>;
+        return <div>Lade...</div>
     }
     return (
         <>
             <SeoMetaTags story={story} />
-            <div className={`navbar container absolute md:relative m-2 md:m-0 rounded-lg bg-white overflow-hidden z-10${isOpen ? ' shadow-lg' : ''}`}>
-              <div className="col-span-full block md:flex md:items-end">
-                <div className="flex justify-between">
-                    <Link href="/">
-                        <a><Logo/></a>
-                    </Link>
-                    <button className="btn -icon -link md:hidden" type="button" onClick={toggleMenu}>
-                      <span>Menü</span>
-                      <Icon name={isOpen ? 'close-line' : 'menu-line'}/>
-                    </button>
-                  </div>
-                  {(isOpen || isDesktop) && <NavLinks blok={links?.content} currentStory={story} isOpen={isOpen} />}
-              </div>
-            </div>
-              {!story?.content.header && <div className="h-24 md:hidden"/>}
-              <StoryblokComponent blok={story.content} story={story}/>
+            <MainMenu blok={global_story.content} currentStory={story}/>
+            {!story.content.header && <div className="h-24 md:hidden"/>}
+            <StoryblokComponent blok={story.content} story={story}/>
             <footer>
-              <ContactInfo blok={links?.content}/>
-              <Footer blok={links?.content}/>
+                <ContactInfo blok={global_story.content}/>
+                <Footer blok={global_story.content}/>
             </footer>
         </>
     )
@@ -53,7 +31,7 @@ export async function getStaticProps({query, params, preview = false}) {
     let slug = params?.slug ? params.slug.join("/") : "home";
     // load the published content outside of the preview mode
     let sbParams = {
-        version: 'draft', // or 'published'
+        version: 'draft', // change to 'published' when going live
         resolve_links: 'url'
     }
 
@@ -63,13 +41,13 @@ export async function getStaticProps({query, params, preview = false}) {
         sbParams.cv = Date.now()
     }
     let storyQuery = storyblokApi.get(`cdn/stories/${slug}`, sbParams)
-    let linksQuery = storyblokApi.get(`cdn/stories/layout/navigation`, sbParams)
+    let globalQuery = storyblokApi.get(`cdn/stories/global`, sbParams)
 
-    const responses = await Promise.all([storyQuery, linksQuery])
+    const responses = await Promise.all([storyQuery, globalQuery])
     return {
         props: {
             story: responses[0].data ? responses[0].data.story : null,
-            links: responses[1].data ? responses[1].data.story : null,
+            global_story: responses[1].data ? responses[1].data.story : null,
             key: slug,
             preview,
         },
