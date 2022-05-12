@@ -1,6 +1,5 @@
 import React from 'react'
-import { sbEditable } from '@storyblok/storyblok-editable'
-import DynamicComponent from './dynamic-component.js'
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react'
 import Image from 'next/image'
 import Icon from './helpers/icon.js'
 import dayjs from 'dayjs'
@@ -8,7 +7,7 @@ import 'dayjs/locale/de'
 
 const EventItem = ({ blok }) => {
   return (
-    <li className="event col-span-full md:col-span-6 xl:col-span-4 p-6 rounded-lg bg-neutral-100" {...sbEditable(blok)}>
+    <li className="event col-span-full md:col-span-6 xl:col-span-4 p-6 rounded-lg bg-neutral-100" {...storyblokEditable(blok)}>
       <div className="flex gap-3 pb-4">
         <div className="flex flex-col justify-center min-w-20 p-4 text-center text-white font-bold rounded bg-red-600">
           <span>{dayjs(blok.date_start).format('dd')}</span>
@@ -42,7 +41,7 @@ const EventItem = ({ blok }) => {
             <div>{blok.location}</div>
           </div>}
         {blok.button?.map(blok => (
-          <DynamicComponent blok={blok} key={blok._uid}/>
+          <StoryblokComponent blok={blok} key={blok._uid}/>
         ))}
       </div>
     </li>

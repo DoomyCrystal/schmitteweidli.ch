@@ -1,5 +1,5 @@
 import React from 'react'
-import {sbEditable} from '@storyblok/storyblok-editable'
+import { storyblokEditable } from '@storyblok/react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -7,8 +7,8 @@ const ProductTeaser = ({blok, index}) => {
   const isFirst = index == 0
   if (blok.link?.linktype == 'story' && blok.link.story?.url) {
     return (
-      <Link href={`#${blok.link.anchor}`}>
-        <a className={`product-teaser relative flex items-end${isFirst ? ' col-span-6 row-span-2 -mx-6 md:mx-0 h-112 md:h-auto' : ' col-span-3'}`} {...sbEditable(blok)}>
+      <Link href={`#${blok.link.anchor}`} {...storyblokEditable(blok)}>
+        <a className={`product-teaser relative flex items-end${isFirst ? ' col-span-6 row-span-2 -mx-6 md:mx-0 h-112 md:h-auto' : ' col-span-3'}`}>
           {blok.picture && (
             <Image
               src={blok.picture.filename}

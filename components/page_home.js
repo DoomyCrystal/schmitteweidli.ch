@@ -1,17 +1,16 @@
 import React from 'react'
-import DynamicComponent from './dynamic-component'
-import {sbEditable} from '@storyblok/storyblok-editable'
+import { storyblokEditable, StoryblokComponent } from '@storyblok/react'
 
 const PageHome = ({blok}) => (
-  <main {...sbEditable(blok)}>
+  <main {...storyblokEditable(blok)}>
     {blok.header ?
       blok.header.map(blok => (
-        <DynamicComponent blok={blok} key={blok._uid} />
+        <StoryblokComponent blok={blok} key={blok._uid} />
       )) :
       null}
     {blok.body ?
       blok.body.map(blok => (
-        <DynamicComponent blok={blok} key={blok._uid} />
+        <StoryblokComponent blok={blok} key={blok._uid} />
       )) :
       null}
   </main>

@@ -1,8 +1,8 @@
 import React from 'react'
-import {sbEditable} from '@storyblok/storyblok-editable'
+import { storyblokEditable } from '@storyblok/react'
 import Image from 'next/image'
 import Icon from './helpers/icon'
-import {Item} from 'react-photoswipe-gallery'
+import { Item } from 'react-photoswipe-gallery'
 
 const GalleryItem = ({blok}) => {
   const url = blok.picture.filename + '/m/'
@@ -18,7 +18,7 @@ const GalleryItem = ({blok}) => {
         height={url.split('/')[5].split('x')[1]}
       >
         {({ ref, open }) => (
-          <a href={blok.picture.filename} ref={ref} onClick={doNothing} className="relative col-span-4 md:col-span-3 lg:col-span-2 aspect-w-1 aspect-h-1 group" {...sbEditable(blok)}>
+          <a href={blok.picture.filename} ref={ref} onClick={doNothing} className="relative col-span-4 md:col-span-3 lg:col-span-2 aspect-w-1 aspect-h-1 group" {...storyblokEditable(blok)}>
             {blok.picture && (
               <Image
                 onClick={open}

@@ -16,23 +16,16 @@ Read the [Next.js tutorial](https://www.storyblok.com/tp/add-a-headless-cms-to-n
   $ git clone https://github.com/sahli-interactive/next-storyblok.git
 ```
 
-### 2. Install all dependecies 
+### 2. Install all dependecies
 ```sh
 $  yarn # or npm install
 ```
 
 ### 3. Adding the Access token
-Create a new empty Space and exchange the preview token with your own in ```lib/storyblok.js```.
+Create a new empty Space, add the preview token to ```.env.local```.
 
-```js
-// in lib/storyblok.js
-const Storyblok = new StoryblokClient({
-    accessToken: 'your-preview-token',
-    cache: {
-        clear: 'auto',
-        type: 'memory'
-    }
-})
+```
+STORYBLOK_TOKEN=<your-new-token>
 ```
 
 ### 4. Run your project
@@ -55,5 +48,3 @@ $ yarn build # or npm run build
 - [Next.js docs](https://nextjs.org/docs/#setup)
 - [Storyblok Tutorial](https://www.storyblok.com/tp/add-a-headless-cms-to-next-js-in-5-minutes)
 - [Preview Mode](https://nextjs.org/docs/advanced-features/preview-mode)
-
-
