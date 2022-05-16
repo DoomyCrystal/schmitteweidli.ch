@@ -9,6 +9,8 @@ const GalleryItem = ({blok}) => {
   function doNothing(e) {
     e.preventDefault()
   }
+
+  if (url) {
     return (
       <Item
         original={url}
@@ -37,6 +39,7 @@ const GalleryItem = ({blok}) => {
         )}
       </Item>
     )
+  }
 }
 
 export default GalleryItem

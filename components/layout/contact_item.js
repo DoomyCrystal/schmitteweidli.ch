@@ -11,7 +11,7 @@ const ContactItem = ({blok}) => {
             </div>}
           <div>
             {blok.headline && <h5>{blok.headline}</h5>}
-            {(blok.link?.linktype == 'story' && blok.link.story?.url) && <Link href={blok.link.story.url}><a className="text-green-800 underline" target={blok.new_tab ? '_blank' : '_self'} rel={blok.new_tab ? 'noreferrer' : undefined}>{blok.link_text}</a></Link>}
+            {(blok.link?.linktype == 'story' && blok.link.cached_url) && <Link href={blok.link.cached_url}><a className="text-green-800 underline" target={blok.new_tab ? '_blank' : '_self'} rel={blok.new_tab ? 'noreferrer' : undefined}>{blok.link_text}</a></Link>}
             {(blok.link?.linktype == 'url' && blok.link?.url) && <Link href={blok.link.url}><a className="text-green-800 underline" target={blok.new_tab ? '_blank' : '_self'} rel={blok.new_tab ? 'noreferrer' : undefined}>{blok.link_text}</a></Link>}
             {(blok.link?.linktype == 'email' && blok.link?.email) && <Link href={`mailto:${blok.link.email}`}><a className="text-green-800 underline" target={blok.new_tab ? '_blank' : '_self'} rel={blok.new_tab ? 'noreferrer' : undefined}>{blok.link_text}</a></Link>}
           </div>

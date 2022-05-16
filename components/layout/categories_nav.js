@@ -10,7 +10,7 @@ const CategoriesNav = ({ blok }) => {
       <Scrollspy items={blok.body.map(blok => toSlug(blok.headline))} className="flex md:block flex-nowrap" currentClassName="active">
         {blok.body.map(blok => (
           <li className="nav-item py-1 px-2 md:px-0 first:md:pt-0 last:pb-0 border-r md:border-r-0 md:border-b border-neutral-600 last:border-transparent text-white" key={blok._uid}>
-            <Link href={`#${toSlug(blok.headline)}`}><a className="nav-link block px-2 py-1 rounded hover:md:bg-neutral-600 transition-colors">{blok.headline}</a></Link>
+            <Link href={`#${toSlug(blok.headline)}`}><a className="nav-link block px-2 py-1 rounded whitespace-nowrap md:whitespace-normal	hover:md:bg-neutral-600 transition-colors">{blok.headline}</a></Link>
           </li>
         ))}
       </Scrollspy>

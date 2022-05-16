@@ -6,8 +6,8 @@ import toSlug from './helpers/to_slug'
 
 const Category = ({blok}) => {
   return (
-    <div id={blok.headline && toSlug(blok.headline)} className="col-span-8 lg:col-span-9 pt-5 md:pt-0" {...storyblokEditable(blok)}>
-      {blok.picture && <div className="aspect-w-2 aspect-h-1 mb-6">
+    <div id={blok.headline && toSlug(blok.headline)} className="col-span-8 lg:col-span-9 pt-5 first:md:pt-0" {...storyblokEditable(blok)}>
+      {blok.picture.filename && <div className="aspect-w-2 aspect-h-1 mb-6">
         <Image
           src={blok.picture.filename}
           alt={blok.picture.alt}

@@ -5,7 +5,7 @@ import Image from 'next/image'
 const Product = ({ blok }) => {
   return (
     <li className="product col-span-4 md:col-span-3" {...storyblokEditable(blok)}>
-      {blok.picture && (
+      {blok.picture.filename && (
         <div className="aspect-w-1 aspect-h-1 mb-4">
           <Image
             src={blok.picture.filename}
