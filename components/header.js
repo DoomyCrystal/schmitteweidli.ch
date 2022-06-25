@@ -8,7 +8,7 @@ const Header = ({ blok }) => {
   const isDesktop = useMediaQuery('(min-width: 768px)')
   let responsivePicture = blok.picture
 
-  if (blok.picture_mobile) {
+  if (blok.picture_mobile.filename) {
     responsivePicture = isDesktop ? blok.picture : blok.picture_mobile
   }
   return (
@@ -41,4 +41,4 @@ const Header = ({ blok }) => {
   );
 };
 
-export default Header;
+export default Header
