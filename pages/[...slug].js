@@ -4,6 +4,7 @@ import SeoMetaTags from "../components/layout/seo-meta-tags"
 import MainMenu from '../components/layout/main_menu.js'
 import ContactInfo from '../components/layout/contact_info'
 import Footer from '../components/layout/footer'
+import Script from 'next/script'
 
 export default function Page({story, global_story}) {
     story = useStoryblokState(story)
@@ -12,16 +13,33 @@ export default function Page({story, global_story}) {
         return <div>Lade...</div>
     }
     return (
-        <>
-            <SeoMetaTags story={story} />
-            <MainMenu blok={global_story.content} currentStory={story}/>
-            {!story.content.header && <div className="h-24 md:hidden"/>}
-            <StoryblokComponent blok={story.content} story={story}/>
-            <footer>
-                <ContactInfo blok={global_story.content}/>
-                <Footer blok={global_story.content}/>
-            </footer>
-        </>
+      <>
+        {process.env.NODE_ENV === 'production' && (
+          <>
+            <Script
+              strategy="lazyOnload"
+              src="https://www.googletagmanager.com/gtag/js?id=G-2QWQZFGJTD"
+            />
+            <Script strategy="lazyOnload" id="google-analytics">
+                {`
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+                
+                    gtag('config', 'G-2QWQZFGJTD');
+                `}  
+            </Script>
+          </>
+        )}
+        <SeoMetaTags story={story} />
+        <MainMenu blok={global_story.content} currentStory={story} />
+        {!story.content.header && <div className="h-24 md:hidden" />}
+        <StoryblokComponent blok={story.content} story={story} />
+        <footer>
+          <ContactInfo blok={global_story.content} />
+          <Footer blok={global_story.content} />
+        </footer>
+      </>
     )
 }
 

@@ -46,3 +46,6 @@ test-timings.json
 
 # Secrets
 .env.local
+
+# Misc
+.tool-versions
