@@ -37,6 +37,14 @@
       @apply underline text-green-800;
     }
 
+    ul {
+      @apply list-disc ml-4;
+    }
+
+    ol {
+      @apply list-decimal ml-4;
+    }
+
     &.bg-neutral-800 {
       a {
         @apply text-green-300;

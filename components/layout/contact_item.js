@@ -4,9 +4,9 @@ import Link from 'next/link'
 
 const ContactItem = ({blok}) => {
     return (
-        <li className="contact-item col-span-full md:col-span-6 xl:col-span-4 flex p-4 rounded border-2 border-neutral-200">
+        <li className="contact-item col-span-full md:col-span-6 lg:col-span-4 flex p-4 rounded border-2 border-neutral-200">
           {blok.picture &&
-            <div className="relative w-16 h-16 mr-4">
+            <div className="relative flex-none w-16 h-16 mr-4">
               <Image src={blok.picture.filename} alt={blok.picture.alt} title={blok.picture.title} layout="fill" objectFit="cover"/>
             </div>}
           <div>
